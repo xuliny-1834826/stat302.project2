@@ -6,7 +6,7 @@ Authors@R:
            family = "Yang",
            role = c("aut", "cre"),
            email = "xuliny@uw.edu")
-Description: What the package does (one paragraph).
+Description: The package is use to do statistical inference and prediction.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
@@ -20,3 +20,4 @@ Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)
 VignetteBuilder: knitr
+Imports: stats, dplyr, magrittr, randomForest, class, tibble
