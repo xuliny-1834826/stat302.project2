@@ -1,0 +1,65 @@
+---
+title: "Project 2: stat302.project2 Tutorial"
+author: "Xuling Yang"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Project 2: stat302.project2 Tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+urlcolor: blue
+---
+
+\addtolength{\headheight}{-.025\textheight} 
+\thispagestyle{fancyplain} 
+\rhead{\includegraphics[height=.1\textheight]{logo.png}}
+\renewcommand{\headrulewidth}{0pt}
+
+## Introduction
+
+`stat302.project2` is an `R` package that gathers these four main functions written this quarter about Statistical inference and prediction:
+
+
+\item `my_t.test`, which performs a one sample t-test in R.
+
+
+
+
+In this tutorial, we will explain their usage and test their performance in statistical use.
+
+## Installation
+
+To begin, we need to do some settings, install our package and load useful datasets.
+
+To download the `stat302.project2` package, use the code below.
+
+```{r setup, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("xuliny-1834826/stat302.project2")
+library(stat302.project2)
+```
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#"
+)
+```
+
+## Tutorial for `my_t.test`
+
+First, let's do a t-test using this function. We are going to use `lifeExp` data from `my_gapminder`
+
+```{r}
+# Hypothesis: H0: mu = 60; Ha: mu != 60
+
+# demonstrate the test using my_t.test
+# my_t.test(my_gapminder$lifeExp, "two.sided", 60)
+
+# using t.test to check the accuracy of previous result
+#t.test(x = my_gapminder$lifeExp, mu = 60,
+             #alternative = "two.sided")
+
+#then H0 is rejected,
+# and mu should not be equal to 60.
+```
+
