@@ -55,8 +55,11 @@ First, let's do a t-test using this function. We are going to use `lifeExp` data
 # demonstrate the test using my_t.test
 my_t.test(my_gapminder$lifeExp, "two.sided", 60)
 
-# If the p-value we get is less than 0.05, then H0 is rejected, and mu should not be equal to 60; otherwise we fail to reject null.
 ```
+
+
+The p-value we get is greater than 0.05. Thus we fail to reject null, which means it is acceptable that mu = 60 in this test, and the real mu is not very far away from 60.
+
 
 ```{r}
 # Hypothesis: H0: mu = 60; Ha: mu < 60
@@ -64,8 +67,10 @@ my_t.test(my_gapminder$lifeExp, "two.sided", 60)
 # demonstrate the test using my_t.test
 my_t.test(my_gapminder$lifeExp, "less", 60)
 
-# If the p-value we get is less than 0.05, then H0 is rejected, and mu should be less than 60; otherwise we fail to reject null.
 ```
+
+The p-value we get is less than 0.05, then H0 is rejected, which means the real mu is more likely to be less than 60.
+
 
 ```{r}
 # Hypothesis: H0: mu = 60; Ha: mu > 60
@@ -73,11 +78,28 @@ my_t.test(my_gapminder$lifeExp, "less", 60)
 # demonstrate the test using my_t.test
 my_t.test(my_gapminder$lifeExp, "greater", 60)
 
-# If the p-value we get is less than 0.05, then H0 is rejected, and mu should be greater than 60; otherwise we fail to reject null.
 ```
+The p-value we get is greater than 0.05. Thus we fail to reject null, which means it is acceptable that mu = 60 in this test, and the real mu is not very far away from 60, and it is not that possible that the mu is greater than 60.
 
+Generally, through all the tests, we can estimate that the real mu is more likely to be less than 60, and is not very far away from 60.
 
 ## Tutorial for `my_lm`
 
-Second, let's do a t-test using this function. We are going to use `lifeExp` data from `my_gapminder`
+Second, let's do a t-test using this function. We are going to use `lifeExp`, `gdpPercap` and `continent` data from `my_gapminder`
+
+```{r}
+# demonstrate a regression
+my_lm(lifeExp ~ gdpPercap + continent, data = my_gapminder)
+
+# interpret the gdpPercap coefficient
+
+# hypothesis test associated with the gdpPercap coefficient and then interpret
+
+# Use ggplot2 to plot the Actual vs. Fitted values and intepret
+```
+
+
+## Tutorial for `my_knn_cv`
+
+Second, let's do a t-test using this function. We are going to use `species`, `bill_length_mm` and `bill_depth_mm` data from `my_penguins`
 
