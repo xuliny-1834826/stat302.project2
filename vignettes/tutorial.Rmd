@@ -53,13 +53,31 @@ First, let's do a t-test using this function. We are going to use `lifeExp` data
 # Hypothesis: H0: mu = 60; Ha: mu != 60
 
 # demonstrate the test using my_t.test
-# my_t.test(my_gapminder$lifeExp, "two.sided", 60)
+my_t.test(my_gapminder$lifeExp, "two.sided", 60)
 
-# using t.test to check the accuracy of previous result
-#t.test(x = my_gapminder$lifeExp, mu = 60,
-             #alternative = "two.sided")
-
-#then H0 is rejected,
-# and mu should not be equal to 60.
+# If the p-value we get is less than 0.05, then H0 is rejected, and mu should not be equal to 60; otherwise we fail to reject null.
 ```
+
+```{r}
+# Hypothesis: H0: mu = 60; Ha: mu < 60
+
+# demonstrate the test using my_t.test
+my_t.test(my_gapminder$lifeExp, "less", 60)
+
+# If the p-value we get is less than 0.05, then H0 is rejected, and mu should be less than 60; otherwise we fail to reject null.
+```
+
+```{r}
+# Hypothesis: H0: mu = 60; Ha: mu > 60
+
+# demonstrate the test using my_t.test
+my_t.test(my_gapminder$lifeExp, "greater", 60)
+
+# If the p-value we get is less than 0.05, then H0 is rejected, and mu should be greater than 60; otherwise we fail to reject null.
+```
+
+
+## Tutorial for `my_lm`
+
+Second, let's do a t-test using this function. We are going to use `lifeExp` data from `my_gapminder`
 

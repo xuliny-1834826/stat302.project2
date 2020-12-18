@@ -15,8 +15,10 @@
 #' @keywords prediction
 #'
 #' @examples
-#' my_knn_cv(penguins_train, penguins_knn$species, 1, 5)
-#' my_knn_cv(penguins_train, penguins_knn$species, 5, 5)
+#' penguins_train <- my_penguins %>%
+#'  select(bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g)
+#' my_knn_cv(penguins_train, my_penguins$species, 1, 5)
+#' my_knn_cv(penguins_train, my_penguins$species, 5, 5)
 #'
 #'
 #' @export

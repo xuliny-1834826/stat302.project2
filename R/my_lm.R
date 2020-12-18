@@ -15,7 +15,6 @@
 #'
 #' @examples
 #' my_lm(eruptions ~ waiting, faithful)
-#' summary(lm(eruptions ~ waiting, data=faithful))
 #'
 #'
 #' @export
